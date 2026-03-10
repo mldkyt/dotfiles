@@ -19,13 +19,3 @@ source /usr/share/nvm/init-nvm.sh
 nvm install 22
 nvm use 22
 corepack enable
-
-cat <<EOF | sudo tee /etc/polkit-1/rules.d/99-nodialogadmin.rules
-polkit.addRule(function(action, subject) {
-    if (subject.isInGroup("wheel")) {
-        return polkit.Result.YES;
-    }
-});
-EOF
-sudo chown root:polkitd /etc/polkit-1/rules.d/99-nodialogadmin.rules
-sudo systemctl reload polkit
