@@ -3,6 +3,7 @@
 ./arch/rankmirrors.sh
 ./arch/aur.sh
 ./arch/shell.sh
+./arch/system.sh
 ./arch/programs.sh
 ./arch/vmware.sh
 ./arch/dracut.sh
