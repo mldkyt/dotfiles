@@ -1,6 +1,6 @@
 #!/bin/bash
 
-paru -Sy vlc vlc-plugins-all kdenlive libreoffice-fresh uv git obs-studio discord vencord-installer-bin steam qbittorrent wine-staging docker docker-compose docker-buildx php reflector nmap bind sshfs kdeconnect btop noto-fonts-{extra,emoji,cjk} krita teams-for-linux-bin ttf-jetbrains-mono-nerd hyfetch gwenview ark partitionmanager zip unzip downgrade nvm syncthing obsidian prismlauncher  librewolf-bin gram-editor-bin   --noconfirm --needed
+paru -Sy vlc vlc-plugins-all kdenlive libreoffice-fresh uv git obs-studio discord vencord-installer-bin steam qbittorrent wine wine-{gecko,mono} gnutls sdl2-compat gst-plugins-{base,good,bad,ugly} winetricks ffmpeg docker docker-compose docker-buildx php reflector nmap bind sshfs kdeconnect btop noto-fonts-{extra,emoji,cjk} krita teams-for-linux-bin ttf-jetbrains-mono-nerd hyfetch gwenview ark partitionmanager zip unzip downgrade nvm syncthing obsidian prismlauncher  librewolf-bin gram-editor-bin --noconfirm --needed
 
 sudo VencordInstaller
 sudo downgrade --ignore always --latest libxkbcommon=1.11.0-1 libxkbcommon-x11=1.11.0-1
@@ -52,4 +52,3 @@ polkit.addRule(function(action, subject) {
 EOF
 sudo chown root:polkitd /etc/polkit-1/rules.d/00-udisks.rules /etc/polkit-1/rules.d/00-ntp-and-time-zones.rules /etc/polkit-1/rules.d/00-open-firewall-kcm.rules
 sudo systemctl reload polkit
-
