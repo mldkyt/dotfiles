@@ -6,4 +6,3 @@
 ./arch/system.sh
 ./arch/programs.sh
 ./arch/vmware.sh
-./arch/dracut.sh
