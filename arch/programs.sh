@@ -7,7 +7,7 @@ sudo downgrade --ignore always --latest libxkbcommon=1.11.0-1 libxkbcommon-x11=1
 sudo systemctl enable docker.socket
 systemctl --user enable --now syncthing
 sudo usermod -aG docker $USER
-git config --global user.name "lain/lunya"
+git config --global user.name "Lunya 🏳<fe0f><200d>⚧<fe0f> :3"
 git config --global user.email lunya@murena.io
 git config --global commit.gpgSign true
 git config --global tag.gpgSign true
