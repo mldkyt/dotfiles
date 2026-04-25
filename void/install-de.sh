@@ -3,7 +3,7 @@
 # Attempt to install DE.
 
 
-sudo xbps-install -S kde-plasma kde-baseapps xorg sddm NetworkManager plasma-nm -y
+sudo xbps-install -S kde-plasma kde-baseapps xorg sddm NetworkManager plasma-nm kwallet kwalletmanager -y
 
 # Enable services.
 sudo sv stop dhcpcd

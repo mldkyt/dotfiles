@@ -85,4 +85,9 @@ git config --global user.email lunya@murena.io
 git config --global commit.gpgSign true
 git config --global tag.gpgSign true
 git config --global user.signingkey 458591AD4C4C0233
-git config --global credential.helper libsecret
+
+if [[ ! -f ~/.config/environment.d/git_askpass.conf ]];
+then
+    mkdir -p ~/.config/environment.d/
+    echo "GIT_ASKPASS=/usr/bin/ksshaskpass" >> ~/.config/environment.d/git_askpass.conf
+fi
