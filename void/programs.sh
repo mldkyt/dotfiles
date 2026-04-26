@@ -26,6 +26,7 @@ popd
 # Hyfetch (Mandatory)
 
 mkdir -p pkg/hyfetch
+pushd pkg/hyfetch
 python -m venv .venv
 .venv/bin/pip install hyfetch
 mkdir -p usr/lib/python3.14/site-packages usr/bin
@@ -76,6 +77,23 @@ xbps-rindex -a *
 sudo xbps-install -R . teams-for-linux -y
 
 popd
+
+# Librewolf
+
+# mkdir -p pkg/librewolf
+# pushd pkg/librewolf
+# axel https://repo.librewolf.net/pool/librewolf-150.0-1-linux-x86_64-deb.deb
+# ar x librewolf-150.0-1-linux-x86_64-deb.deb
+# rm librewolf-150.0-1-linux-x86_64-deb.deb
+# rm debian-binary control.tar.gz
+# tar -xvf data.tar.gz
+# rm -r etc data.tar.gz
+
+# xbps-create -A x86_64 -n "librewolf-150.0_1" -s "LibreWolf" .
+# xbps-rindex -a *
+# sudo xbps-install -R . librewolf -y
+
+# popd
 
 # Config rest
 
