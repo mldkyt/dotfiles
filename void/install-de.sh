@@ -5,6 +5,12 @@
 
 sudo xbps-install -S kde-plasma kde-baseapps xorg sddm NetworkManager plasma-nm kwallet kwalletmanager -y
 
+# Install driver nvidia
+sudo xbps-install void-repo-nonfree -y
+sudo xbps-install -Su
+sudo xbps-install nvidia -y
+sudo xbps-install qt5-wayland qt6-wayland kwayland -y
+
 # Enable services.
 sudo sv stop dhcpcd
 sudo sv stop dhcpcd
@@ -14,12 +20,6 @@ sudo sv start dbus
 sudo ln -s /etc/sv/sddm/ /var/service
 sudo ln -s /etc/sv/NetworkManager/ /var/service
 sudo sv start NetworkManager
-
-# Install driver nvidia
-sudo xbps-install void-repo-nonfree -y
-sudo xbps-install -Su
-sudo xbps-install nvidia -y
-sudo xbps-install qt5-wayland qt6-wayland kwayland -y
 
 # Update some configs (wayland)
 
