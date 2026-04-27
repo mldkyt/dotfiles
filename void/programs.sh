@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 sudo xbps-install void-repo-multilib void-repo-multlib-nonfree -y
@@ -78,22 +77,11 @@ sudo xbps-install -R . teams-for-linux -y
 
 popd
 
-# Librewolf
+# Flatpaks
 
-# mkdir -p pkg/librewolf
-# pushd pkg/librewolf
-# axel https://repo.librewolf.net/pool/librewolf-150.0-1-linux-x86_64-deb.deb
-# ar x librewolf-150.0-1-linux-x86_64-deb.deb
-# rm librewolf-150.0-1-linux-x86_64-deb.deb
-# rm debian-binary control.tar.gz
-# tar -xvf data.tar.gz
-# rm -r etc data.tar.gz
-
-# xbps-create -A x86_64 -n "librewolf-150.0_1" -s "LibreWolf" .
-# xbps-rindex -a *
-# sudo xbps-install -R . librewolf -y
-
-# popd
+sudo xbps-install -y flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flatseal -y
 
 # Config rest
 
@@ -108,4 +96,59 @@ if [[ ! -f ~/.config/environment.d/git_askpass.conf ]];
 then
     mkdir -p ~/.config/environment.d/
     echo "GIT_ASKPASS=/usr/bin/ksshaskpass" >> ~/.config/environment.d/git_askpass.conf
+fi
+
+cat ~/.bashrc | grep "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+if [[ $? -ne 0 ]];
+then
+    echo "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+fi
+
+cat ~/.zshrc | grep "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+if [[ $? -ne 0 ]];
+then
+    echo "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+fi
+
+if [[ ! -f ~/.config/environment.d/ssh_askpass.conf ]];
+then
+    mkdir -p ~/.config/environment.d/
+    echo "SSH_ASKPASS=/usr/bin/ksshaskpass" >> ~/.config/environment.d/ssh_askpass.conf
+fi
+
+cat ~/.bashrc | grep "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+if [[ $? -ne 0 ]];
+then
+    echo "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+fi
+
+cat ~/.zshrc | grep "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+if [[ $? -ne 0 ]];
+then
+    echo "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+fi
+
+read -p "setup vr? [y/N]" vr
+
+if [[ "$vr" = "y" ]]
+then
+    flatpak install wivrn
+    sudo xbps-install -y avahi
+    sudo ln -s /etc/sv/avahi-daemon /var/service
+    sudo sv start avahi-daemon
+
+    mkdir -p pkg/xrizer
+    pushd pkg/xrizer
+    axel https://github.com/Supreeeme/xrizer/releases/download/v0.5/xrizer-v0.5.zip
+    7z x xrizer-v0.5.zip
+    rm xrizer-v0.5.zip
+    mkdir -p usr/lib
+    mv xrizer-v0.5/bin/linux64/vrclient.so usr/lib/vrclient.so
+    rm -rf xrizer-v0.5
+
+    xbps-create -A x86_64 -n "xrizer-0.5_1" -s "VR client" .
+    xbps-rindex -a *
+    sudo xbps-install -R . xrizer -y
+
+    popd
 fi
