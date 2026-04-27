@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-sudo xbps-install axel wget vlc kdenlive libreoffice libreoffice-kde uv git obs steam qbittorrent wine wine-{gecko,mono} winetricks ffmpeg docker docker-{compose,buildx} php nmap bind fuse-sshfs kdeconnect btop krita gwenview ark partitionmanager zip unzip PrismLauncher 7zip kcalc handbrake pycharm-community easyeffects yt-dlp blender kompare godot sqlitebrowser -y
+sudo xbps-install zstd axel wget vlc kdenlive libreoffice libreoffice-kde uv git obs steam qbittorrent wine wine-{gecko,mono} winetricks ffmpeg docker docker-{compose,buildx} php nmap bind fuse-sshfs kdeconnect btop krita gwenview ark partitionmanager zip unzip PrismLauncher 7zip kcalc handbrake pycharm-community easyeffects yt-dlp blender kompare godot sqlitebrowser -y
 
 # Custom packages
 # This is a really stupid way to do this but I can't be bothered
@@ -27,12 +27,10 @@ popd
 
 mkdir -p pkg/hyfetch
 pushd pkg/hyfetch
-python -m venv .venv
-.venv/bin/pip install hyfetch
-mkdir -p usr/lib/python3.14/site-packages usr/bin
-cp -r .venv/lib/python3.14/site-packages/hyfetch* usr/lib/python3.14/site-packages
-cp .venv/bin/hyfetch usr/bin/hyfetch
-rm -rf .venv
+curl -LOJ https://archlinux.org/packages/extra/x86_64/hyfetch/download/
+version=$(ls *.pkg.tar.zst | cut -d "-" -f 2)
+tar -xvf *.pkg.tar.zst
+rm *.pkg.tar.zst .*
 
 xbps-create -A x86_64 -n hyfetch-2.0.5_1 -s "Neofetch with pride flags" .
 xbps-rindex -a *
