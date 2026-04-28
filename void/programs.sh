@@ -2,7 +2,7 @@
 
 sudo xbps-install void-repo-multilib void-repo-multlib-nonfree -y
 
-sudo xbps-install -S zstd axel wget vlc kdenlive libreoffice libreoffice-kde uv git obs steam libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit libva-32bit nvidia-libs-32bit qbittorrent wine wine-{gecko,mono} winetricks ffmpeg docker docker-{compose,buildx} php nmap bind fuse-sshfs kdeconnect btop krita gwenview ark partitionmanager zip unzip PrismLauncher 7zip kcalc handbrake pycharm-community easyeffects yt-dlp blender kompare godot sqlitebrowser  -y
+sudo xbps-install -S zstd axel wget vlc kdenlive libreoffice libreoffice-kde uv git obs steam libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit libva-32bit nvidia-libs-32bit qbittorrent wine wine-{gecko,mono} winetricks ffmpeg docker docker-{compose,buildx} php nmap bind fuse-sshfs kdeconnect btop krita gwenview ark partitionmanager zip unzip PrismLauncher 7zip kcalc handbrake pycharm-community easyeffects yt-dlp blender kompare godot sqlitebrowser fastfetch -y
 
 # Custom packages
 # This is a really stupid way to do this but I can't be bothered
