@@ -38,6 +38,18 @@ sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pip
 sudo ln -s /usr/share/applications/pipewire.desktop /etc/xdg/autostart/
 sudo ln -s /usr/share/applications/pipewire-pulse.desktop /etc/xdg/autostart/
 
+# Bluetooth
+
+sudo xbps-install bluez libspa-bluetooth -y
+sudo ln -s /etc/sv/bluetoothd /var/service
+sudo sv start bluetoothd
+
+# Time
+
+sudo xbps-install ntp
+sudo ln -s /etc/sv/ntpd
+sudo sv start ntpd
+
 # Fonts
 
 sudo xbps-install adwaita-fonts noto-fonts-{cjk,emoji} -y
@@ -58,5 +70,5 @@ sudo vkpurge rm $(sudo vkpurge list)
 
 for i in wheel tty floppy disk audio video cdrom optical mail storage network kvm users xbuilder libvirt docker bluetooth
 do
-    sudo usermod -aG $i $USER
+    sudo usermod -aG $i lunya
 done
