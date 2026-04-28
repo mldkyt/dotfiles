@@ -19,7 +19,9 @@ rm gram-linux-x86_64-1.2.1.tar.gz
 mv gram.app usr
 rm usr/license.md
 xbps-create -A x86_64 -n gram-1.2.1_1 -s "Gram code editor" .
+sync
 xbps-rindex -a *
+sync
 sudo xbps-install -R . gram -y
 
 popd
@@ -34,7 +36,9 @@ tar -xvf *.pkg.tar.zst
 rm *.pkg.tar.zst .*
 
 xbps-create -A x86_64 -n hyfetch-2.0.5_1 -s "Neofetch with pride flags" .
+sync
 xbps-rindex -a *
+sync
 sudo xbps-install -R . hyfetch -y
 
 popd
@@ -54,7 +58,9 @@ tar -xvf data.tar.xz
 rm -rf etc/ data.tar.xz control.tar.xz
 
 xbps-create -A x86_64 -n "freedownloadmanager-${version}_1" -s "Free Download Manager" .
+sync
 xbps-rindex -a *
+sync
 sudo xbps-install -R . freedownloadmanager -y
 
 popd
@@ -72,7 +78,9 @@ mkdir -p usr/bin
 ln -s opt/teams-for-linux/teams-for-linux usr/bin/teams-for-linux
 
 xbps-create -A x86_64 -n "teams-for-linux-2.8.0_1" -s "Teams for Linux" .
+sync
 xbps-rindex -a *
+sync
 sudo xbps-install -R . teams-for-linux -y
 
 popd
@@ -147,7 +155,9 @@ then
     rm -rf xrizer-v0.5
 
     xbps-create -A x86_64 -n "xrizer-0.5_1" -s "VR client" .
+    sync
     xbps-rindex -a *
+    sync
     sudo xbps-install -R . xrizer -y
 
     popd
