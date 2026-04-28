@@ -32,6 +32,7 @@ sudo bash -c 'echo "force_drivers+=\" nvidia nvidia_modeset nvidia_uvm nvidia_dr
 
 sudo xbps-install pipewire -y
 
+sudo mkdir -p /etc/pipewire/pipewire.conf.d/
 sudo ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
 sudo ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 
