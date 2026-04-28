@@ -115,7 +115,7 @@ fi
 cat ~/.zshrc | grep "export GIT_ASKPASS=ksshaskpass"
 if [[ $? -ne 0 ]];
 then
-    echo "export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+    echo "export GIT_ASKPASS=ksshaskpass" >> ~/.zshrc
 fi
 
 if [[ ! -f ~/.config/environment.d/ssh_askpass.conf ]];
@@ -133,7 +133,7 @@ fi
 cat ~/.zshrc | grep "export SSH_ASKPASS=ksshaskpass"
 if [[ $? -ne 0 ]];
 then
-    echo "export SSH_ASKPASS=ksshaskpass" >> ~/.bashrc
+    echo "export SSH_ASKPASS=ksshaskpass" >> ~/.zshrc
 fi
 
 read -p "setup vr? [y/N]" vr
