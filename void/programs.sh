@@ -106,16 +106,16 @@ then
     echo "GIT_ASKPASS=/usr/bin/ksshaskpass" >> ~/.config/environment.d/git_askpass.conf
 fi
 
-cat ~/.bashrc | grep "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+cat ~/.bashrc | grep "export GIT_ASKPASS=ksshaskpass"
 if [[ $? -ne 0 ]];
 then
-    echo "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+    echo "export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
 fi
 
-cat ~/.zshrc | grep "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+cat ~/.zshrc | grep "export GIT_ASKPASS=ksshaskpass"
 if [[ $? -ne 0 ]];
 then
-    echo "GIT_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+    echo "export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
 fi
 
 if [[ ! -f ~/.config/environment.d/ssh_askpass.conf ]];
@@ -124,16 +124,16 @@ then
     echo "SSH_ASKPASS=/usr/bin/ksshaskpass" >> ~/.config/environment.d/ssh_askpass.conf
 fi
 
-cat ~/.bashrc | grep "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+cat ~/.bashrc | grep "export SSH_ASKPASS=ksshaskpass"
 if [[ $? -ne 0 ]];
 then
-    echo "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+    echo "export SSH_ASKPASS=ksshaskpass" >> ~/.bashrc
 fi
 
-cat ~/.zshrc | grep "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass"
+cat ~/.zshrc | grep "export SSH_ASKPASS=ksshaskpass"
 if [[ $? -ne 0 ]];
 then
-    echo "SSH_ASKPASS=export GIT_ASKPASS=ksshaskpass" >> ~/.bashrc
+    echo "export SSH_ASKPASS=ksshaskpass" >> ~/.bashrc
 fi
 
 read -p "setup vr? [y/N]" vr
