@@ -42,6 +42,8 @@ sudo ln -s /usr/share/applications/pipewire-pulse.desktop /etc/xdg/autostart/
 
 sudo xbps-install adwaita-fonts noto-fonts-{cjk,emoji} -y
 
+# Kernel
+
 echo "Reconfigure the linux*.* package"
 
 sudo xbps-install -y linux7.0 linux7.0-headers
@@ -50,3 +52,11 @@ echo "ignorepkg=linux-headers" | sudo tee -a /etc/xbps.d/20-ignore-linux.conf
 sudo xbps-remove linux linux-headers -y
 sudo xbps-remove linux6.12 linux6.12-headers -y
 sudo vkpurge rm $(sudo vkpurge list)
+
+# Groups
+
+
+for i in wheel tty floppy disk audio video cdrom optical mail storage network kvm users xbuilder libvirt docker bluetooth
+do
+    sudo usermod -aG $i $USER
+done
