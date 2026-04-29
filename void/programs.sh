@@ -91,6 +91,11 @@ sudo xbps-install -y flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flatseal -y
 
+# Librewolf
+
+echo "repository=https://github.com/index-0/librewolf-void/releases/latest/download/" | sudo tee -a /etc/xbps.d/20-librewolf.conf
+sudo xbps-install -Sy librewolf
+
 # Config rest
 
 sudo usermod -aG docker $USER
