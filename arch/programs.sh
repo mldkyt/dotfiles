@@ -1,14 +1,13 @@
 #!/bin/bash
 
-paru -Sy vlc vlc-plugins-all kdenlive libreoffice-fresh uv git obs-studio discord vencord-installer-bin steam qbittorrent wine wine-{gecko,mono} gnutls sdl2-compat gst-plugins-{base,good,bad,ugly} winetricks ffmpeg docker docker-compose docker-buildx php reflector nmap bind sshfs kdeconnect btop noto-fonts-{extra,emoji,cjk} krita teams-for-linux-bin ttf-jetbrains-mono-nerd hyfetch gwenview ark partitionmanager zip unzip downgrade nvm syncthing obsidian prismlauncher librewolf-bin gram-editor-bin 7z rar kcalc handbrake fluxer-bin pycharm prusa-slicer easyeffects yt-dlp parabolic blender kompare godot hyfetch fastfetch tenacity rar epson-inkjet-printer-escpr epson-inkjet-printer-escpr2 sqlitebrowser gram xclicker --noconfirm --needed
-paru -Sy phantomjs python-{xattr,brotli,websockets,pycryptdome,mutagen,curl_cffi} aria2 atomicparsley noise-suppression-for-voice kimageformats lsp-plugins calf zam-plugins --needed --asdeps --noconfirm
+paru -Sy haruna kdenlive libreoffice-fresh uv git obs-studio discord vencord-installer-bin steam qbittorrent wine wine-{gecko,mono} ffmpeg docker docker-{buildx,compose} php reflector nmap bind sshfs kdeconnect btop noto-fonts-{extra,emoji,cjk} krita teams-for-linux-bin ttf-jetbrains-mono-nerd hyfetch gwenview ark 7zip partitionmanager zip unzip downgrade nvm prismlauncher librewolf-bin gram rar kcalc handbrake fluxer-bin pycharm prusa-slicer easyeffects yt-dlp parabolic blender godot hyfetch fastfetch tenacity rar epson-inkjet-printer-escpr epson-inkjet-printer-escpr2 sqlitebrowser gram xclicker --noconfirm --needed
+paru -Sy phantomjs python-{xattr,brotli,websockets,pycryptdome,mutagen,curl_cffi} aria2 atomicparsley kimageformats lsp-plugins calf zam-plugins --needed --asdeps --noconfirm
 
 sudo VencordInstaller
 sudo downgrade --ignore always --latest libxkbcommon=1.11.0-1 libxkbcommon-x11=1.11.0-1
 sudo systemctl enable docker.socket
-systemctl --user enable --now syncthing
 sudo usermod -aG docker $USER
-git config --global user.name "Lunya 🏳<fe0f><200d>⚧<fe0f> :3"
+git config --global user.name "Lunya 🏳️‍⚧️ :3"
 git config --global user.email lunya@murena.io
 git config --global commit.gpgSign true
 git config --global tag.gpgSign true
