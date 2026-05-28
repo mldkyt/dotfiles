@@ -298,6 +298,7 @@ layout {
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-at-startup "kdeconnectd"
+spawn-at-startup "/usr/lib/pam_kwallet_init"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
