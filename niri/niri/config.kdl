@@ -400,6 +400,7 @@ binds {
     Mod+E hotkey-overlay-title="Dolphin" { spawn-sh "nautilus -w"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+C hotkey-overlay-title="Pick screen color" { spawn-sh "wl-color-picker clipboard"; }
+    Mod+V hotkey-overlay-title="Clipboard" { spawn-sh "qs -c noctalia-shell ipc call plugin:clipboard toggle"; } 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -627,7 +628,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
+    Mod+Control+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
