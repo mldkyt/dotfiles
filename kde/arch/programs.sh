@@ -11,7 +11,7 @@ git config --global user.name "Lunya 🏳️‍⚧️ :3"
 git config --global user.email lunya@murena.io
 git config --global commit.gpgSign true
 git config --global tag.gpgSign true
-git config --global user.signingkey 458591AD4C4C0233
+git config --global user.signingkey F10F38B5E1C83BA4
 git config --global credential.helper libsecret
 
 echo "source /usr/share/nvm/init-nvm.sh" >> ~/.zshrc

@@ -103,7 +103,7 @@ git config --global user.name "Lunya 🏳<fe0f><200d>⚧<fe0f> :3"
 git config --global user.email lunya@murena.io
 git config --global commit.gpgSign true
 git config --global tag.gpgSign true
-git config --global user.signingkey 458591AD4C4C0233
+git config --global user.signingkey F10F38B5E1C83BA4
 
 if [[ ! -f ~/.config/environment.d/git_askpass.conf ]];
 then
