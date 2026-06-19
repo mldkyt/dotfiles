@@ -7,8 +7,8 @@ sudo VencordInstaller
 sudo downgrade --ignore always --latest libxkbcommon=1.11.0-1 libxkbcommon-x11=1.11.0-1
 sudo systemctl enable docker.socket
 sudo usermod -aG docker $USER
-git config --global user.name "Lunya 🏳️‍⚧️ :3"
-git config --global user.email lunya@murena.io
+git config --global user.name "Luna (mldchan)"
+git config --global user.email estrogen@tuta.io
 git config --global commit.gpgSign true
 git config --global tag.gpgSign true
 git config --global user.signingkey F10F38B5E1C83BA4
